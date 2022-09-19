@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import './DailyCashBalance.sass'
-import {Loading} from "../../loading/Loading";
 import NavbarComponent from "../../UI/header/Navbar";
 import axios from "axios";
 import imgCLient from "../../../assets/img-client-consultation.png";
@@ -10,7 +9,6 @@ function DailyCashBalance() {
 
     const date = new Date();
     // Invoice
-    let {isAuthenticated} = useAuth0();
     let [invoices, setInvoice] = useState(0);
     let [discount, setDiscount] = useState(0);
     let [invoiceTotal, setInvoiceTotal] = useState(0);

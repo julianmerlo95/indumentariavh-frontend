@@ -17,29 +17,10 @@ export const LoginButton = () => {
 };
 
 function Login() {
-    const {isAuthenticated} = useAuth0();
+
     return (
         <div>
-            {isAuthenticated ?
                 <Home/>
-                : <div>
-                    <div>
-                        <Navbar className="navbar" bg="light" expand="lg">
-                            <Container>
-                                <img alt="img-logo" className="img-logo" src={logoImg}/>
-                                <div>
-                                    <LoginButton></LoginButton>
-                                </div>
-                            </Container>
-                        </Navbar>
-                    </div>
-                    <h1 className="title-login">Inicio de sesion</h1>
-                    <p>Para ingresar en el sistema oprima el boton "iniciar sesion"</p>
-                    <div>
-                        <img alt="login-img" className="login-img" src={imgLogin}/>
-                    </div>
-                    <LoginButton></LoginButton>
-                </div>}
         </div>
     )
 }

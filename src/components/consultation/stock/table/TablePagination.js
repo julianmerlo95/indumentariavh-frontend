@@ -2,9 +2,7 @@ import React from "react";
 import Button from "@mui/material/Button";
 import './TablePagination.sass';
 
-
 const TablePagination = (props) => {
-    const {user} = useAuth0();
     let arrayPage = [];
     const {
         quantityItemShow,
@@ -31,7 +29,7 @@ const TablePagination = (props) => {
                         <th scope="col">Color</th>
                         <th scope="col">Talle</th>
                         <th scope="col">Cantidad</th>
-                        {user.nickname == "pame" ? <th scope="col"></th> : <th scope="col">Precio de compra</th>}
+                        <th scope="col">Precio de compra</th>
                         <th scope="col">Precio de venta</th>
                         <th scope="col">Realidad aumentada</th>
                         <th scope="col">Estado</th>
@@ -48,7 +46,7 @@ const TablePagination = (props) => {
                                 <th scope="row">{stock.colour}</th>
                                 <th scope="row">{stock.waist}</th>
                                 <th scope="row">{stock.quantity}</th>
-                                <th scope="row">{user.nickname == "pame" ? "" : `$${new Intl.NumberFormat("es-CL").format(Number(stock.purchasePrice))}`}</th>
+                                <th scope="row">{`$${new Intl.NumberFormat("es-CL").format(Number(stock.purchasePrice))}`}</th>
                                 <th scope="row">${new Intl.NumberFormat("es-CL").format(Number(stock.salePrice))}</th>
                                 <th scope="row">{stock.isAugmentedReality === 1 ? "HABILITADO" : "DESHABILITADO"}</th>
                                 <th scope="row">{stock.isEnable === 1 ? "HABILITADO" : "DESHABILITADO"}</th>
